@@ -8,5 +8,10 @@ Our data storage is:
     - items have a unique ID, a name, a price, and a store ID.
 """
 
-stores = {}
-items = {}
+# stores = {}
+# items = {}
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+
