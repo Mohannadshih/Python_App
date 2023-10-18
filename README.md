@@ -2,4 +2,4 @@
 
 ##How to run
 
-use the  `python -m flask run' command to start the app
+use the  `python -m flask run` command to start the app
