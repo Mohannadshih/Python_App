@@ -4,13 +4,25 @@ import requests
 main = Blueprint('main', __name__)
 
 @main.route('/')
-def index():
-    return render_template('test.html')
+def home():
+    return render_template('home.html')
 
-@main.route('/about')
-def about():
-    return render_template('about.html')
+@main.route('/listing')
+def listing():
+    return render_template('list.html')
 
-@main.route('/contact')
-def contact():
-    return render_template('contact.html')
+@main.route('/data')
+def data_page():
+    return render_template('data.html')
+
+@main.route('/api_test')
+def api_page():
+    return render_template('api_test.html')
+
+@main.route('/form')
+def form():
+    return render_template('form.html')
+
+@main.route('/log')
+def login_page():
+    return render_template('login.html')
