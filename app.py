@@ -7,19 +7,22 @@ from flask_migrate import Migrate
 import os
 from dotenv import load_dotenv
 
+#API blueprints
 from resources.item import blp as ItemBlueprint
 from resources.store import blp as StoreBlueprint
 from resources.tag import blp as TagBlueprint
 from resources.user import blp as UserBlueprint
+
+#App webpage route blueprints
+from pages.home import main as MainBlueprint
 
 def create_app(db_url=None):
     app = Flask(__name__)
 
     load_dotenv()
 
-    @app.route("/")
-    def home():
-        return "Hello! this is the main page <h1>HELLO</h1>"
+    #App webpage route blueprints
+    app.register_blueprint(MainBlueprint)
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "Stores REST API"
@@ -100,6 +103,7 @@ def create_app(db_url=None):
             401,
         )
 
+    #API blueprints
     api.register_blueprint(ItemBlueprint)
     api.register_blueprint(StoreBlueprint)
     api.register_blueprint(TagBlueprint)
