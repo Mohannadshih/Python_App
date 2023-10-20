@@ -1,4 +1,5 @@
 # Python_App
+App made using existing code from online courses to help learn how to use flask to create websites
 
 ## How to run
 
