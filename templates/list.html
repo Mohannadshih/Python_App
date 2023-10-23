@@ -1,101 +1,158 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- <style>
-        /* Add a gray background color and some padding to the footer */
-        footer {
-        background-color: #f2f2f2;
-        padding: 25px;
-        }
-    
-        .carousel-inner img {
-        width: 100%; /* Set width to 100% */
-        min-height: 200px;
-        }
-    
-        /* Hide the carousel text when the screen is less than 600 pixels wide */
-        @media (max-width: 600px) {
-        .carousel-caption {
-            display: none; 
-        }
-        }
-    </style> -->
-    </head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- <style>
+      /* Add a gray background color and some padding to the footer */
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      }
+  
+      .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      min-height: 200px;
+      }
+  
+      /* Hide the carousel text when the screen is less than 600 pixels wide */
+      @media (max-width: 600px) {
+      .carousel-caption {
+          display: none; 
+      }
+      }
+  </style> -->
+</head>
 <body>
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="/">Info</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="/listing">Info Listings</a></li>
-              <li><a href="/data">Data Analysis</a></li>
-              <li><a href="/api_test">API testing</a></li>
-              <li><a href="/form">Form</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/log"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="/">Info</a>
         </div>
-      </nav>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/listing">Info Listings</a></li>
+            <li><a href="/data">Data Analysis</a></li>
+            <li><a href="/api_test">API testing</a></li>
+            <li><a href="/form">Form</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/log"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div class="container-fluid">
-        <div class="container-fluid text-center">
-          <div class="row">
-            <div class="col-4">
-              <h1>CSV Test Data</h1>
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-6">
+          <h1>CSV Test Data</h1>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">
+            Create New entry
+          </button>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>phone</th>
+                <th>date</th>
+                <th>address</th>
+                <th>city</th>
+                <th>country</th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['phone'] }}</td>
+                    <td>{{ row['date'] }}</td>
+                    <td>{{ row['address'] }}</td>
+                    <td>{{ row['city'] }}</td>
+                    <td>{{ row['country'] }}</td>
+                    <td>{{ row['latitude'] }}</td>
+                    <td>{{ row['longitude'] }}</td>
+                    <td>{{ row['age'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Form</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <h1>Form to Fill Out</h1>
+              <form action="/submit" method="POST">
+                  <!-- Basic Information -->
+                  <h2>Basic Information</h2>
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required><br>
+      
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required><br>
+      
+                  <!-- Optional Section: Send Data -->
+                  <h2>Send Data (Optional)</h2>
+                  <input type="checkbox" id="sendData" name="sendData">
+                  <label for="sendData">Send Data</label><br>
+      
+                  <!-- Optional Fields (Initially Hidden) -->
+                  <div id="optionalFields" style="display:none;">
+                      <label for="subject">Subject:</label>
+                      <input type="text" id="subject" name="subject"><br>
+      
+                      <label for="message">Message:</label>
+                      <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+                  </div>
+      
+                  <input type="submit" value="Submit">
+              </form>
             </div>
-            <div class="col-4">
-              <button class="btn btn-lg btn-info">
-                Create New entry
-              </button>
-            </div>
+      
+            <script>
+                // Toggle visibility of optional section based on the "Send Data" checkbox
+                const sendDataCheckbox = document.getElementById("sendData");
+                const optionalFields = document.getElementById("optionalFields");
+        
+                sendDataCheckbox.addEventListener("change", function() {
+                    optionalFields.style.display = sendDataCheckbox.checked ? "block" : "none";
+                });
+            </script>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>name</th>
-                    <th>phone</th>
-                    <th>date</th>
-                    <th>address</th>
-                    <th>city</th>
-                    <th>country</th>
-                    <th>latitude</th>
-                    <th>longitude</th>
-                    <th>age</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in data %}
-                    <tr>
-                        <td>{{ row['name'] }}</td>
-                        <td>{{ row['phone'] }}</td>
-                        <td>{{ row['date'] }}</td>
-                        <td>{{ row['address'] }}</td>
-                        <td>{{ row['city'] }}</td>
-                        <td>{{ row['country'] }}</td>
-                        <td>{{ row['latitude'] }}</td>
-                        <td>{{ row['longitude'] }}</td>
-                        <td>{{ row['age'] }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    
+      </div>
     </div>
+
   </body>
 </html>
