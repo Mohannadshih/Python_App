@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Drum Kit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="text-align: center; background-color: #283149;">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="/">Info</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/listing">Info Listings</a></li>
+          <li><a href="/data">Data Analysis</a></li>
+          <li><a href="/swagger-ui" target="_blank">API testing</a></li>
+          <li><a href="/form">Form</a></li>
+          <li><a href="/misc">Misc</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/log"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1 id="title" style="  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: 'Arvo', cursive;
+  text-shadow: 3px 0 #DA0463;">
+  Drum 🥁 Kit</h1>
+  <div class="set">
+    <button class="w drum">w</button>
+    <button class="a drum">a</button>
+    <button class="s drum">s</button>
+    <button class="d drum">d</button>
+    <button class="j drum">j</button>
+    <button class="k drum">k</button>
+    <button class="l drum">l</button>
+  </div>
+
+
+<script src="{{ url_for('static', filename='Javascript/index.js') }}" charset="utf-8"></script>
+
+<footer>
+  Made with ❤️ in London.
+</footer>
+</body>
+</html>

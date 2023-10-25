@@ -32,3 +32,7 @@ def form():
 @main.route('/log')
 def login_page():
     return render_template('login.html')
+
+@main.route('/misc')
+def misc():
+    return render_template('index.html')
