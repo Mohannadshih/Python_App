@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_file
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from blocklist import BLOCKLIST
@@ -23,6 +23,10 @@ def create_app(db_url=None):
 
     #App webpage route blueprints
     app.register_blueprint(MainBlueprint)
+
+    @app.route('/sounds/<path:filename>')
+    def sound(filename):
+        return send_file('static/sounds/' + filename, mimetype='audio/mpeg')
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "Stores REST API"
