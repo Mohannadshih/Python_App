@@ -28,31 +28,7 @@
     </style> -->
     </head>
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="/">Info</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="/listing">Info Listings</a></li>
-              <li><a href="/data">Data Analysis</a></li>
-              <li><a href="/swagger-ui" target="_blank">API testing</a></li>
-              <li><a href="/form">Form</a></li>
-              <li><a href="/misc">Misc</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/log"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    {% include 'navbar.html' %} 
 
     <div class="container-fluid">
         <h1>Form to Fill Out</h1>

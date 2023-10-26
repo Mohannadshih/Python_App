@@ -24,6 +24,7 @@ def create_app(db_url=None):
     #App webpage route blueprints
     app.register_blueprint(MainBlueprint)
 
+    #configured server to be able to use mp3 files
     @app.route('/sounds/<path:filename>')
     def sound(filename):
         return send_file('static/sounds/' + filename, mimetype='audio/mpeg')
