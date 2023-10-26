@@ -11,4 +11,5 @@ Make sure to create a new .env file for you machine and include the `DATABASE_UR
 
 ## Webpage locations and how to use them
 
-
+The actual html files for the webpages are located in the `/templates` folder and then all the static assets like css, javascript, images, and etc are located
+in the `/static` folder.
