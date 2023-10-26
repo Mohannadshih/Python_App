@@ -22,3 +22,7 @@ Please verify that the changes you made to the database are actually correct wit
 not to go through with the change in the database, then use `python -m flask db downgrade` to revert back to the previous version of the
 database.
 
+## Acessing the App's APIs
+
+All the APIs made for the app are currently stored within the `/resources` folder.
+
