@@ -36,3 +36,7 @@ def login_page():
 @main.route('/misc')
 def misc():
     return render_template('index.html')
+
+@main.route('/simon')
+def simon():
+    return render_template('simon.html')
