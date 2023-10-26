@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, render_template
+from flask import Blueprint, render_template
 import csv
 
 main = Blueprint('main', __name__)
@@ -10,7 +10,7 @@ def home():
 @main.route('/listing')
 def listing():
     data = []
-    with open('test_data/test1.csv', 'r') as csv_file:
+    with open('static/CSV/test1.csv', 'r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
             data.append(row)
