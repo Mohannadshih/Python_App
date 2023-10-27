@@ -3,7 +3,12 @@ App made using existing code from online courses to help learn how to use flask 
 
 ## How to run
 
-use the  `python -m flask run` command to start the app
+use the  `python -m flask run` command to start the app 
+or use `docker build -t <name-image-here> .` to build a docker image to use and then
+`docker run -d -p 5000:5000 <container-name-here>` to run the container in the background
+using port 5000. In which the first port in `-p 5000:5000` is from the computer and the second port is 
+within the container, so if you want you can do `-p 5005:5000` to map your 5005 port to the 5000 port 
+within the container.
 
 ## Including .env file when running the app
 
