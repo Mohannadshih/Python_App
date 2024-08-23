@@ -1,0 +1,59 @@
+# Obsidian Notes
+
+### Basic Actions
+
+To create a new note press CTRL+N within a vault (Folder).
+
+To rename an active note, you can select the name at the top of the note and edit it or press F2. Also when you update a note, Obsidian gives you the option to automatically update all the links to that file.
+
+To Open the command palette to manage your notes press CTRL+P, then you will be able to type in or use the arrow keys to navigate to the command you want to execute.
+
+To delete an active note navigate to the upper right of an active note and click **More options --> Delete file**. You could also select the **Delete current file** command from the command palette.
+
+### Basic Text modifiers
+
+Headers: use ‘# ’ (pound space) 
+• Level 1 header: # 
+• Level 2 header: ##
+• … 
+• Level 6 header: ###### 
+
+Tags are words with a ‘#’ in front, with no space between the ‘#’ and the word: #word 
+
+To make text bold, surround it with ‘**’s: This **word** is important. → This word is important. 
+
+To make text italic, surround it with ‘_’s or ‘*'s. _This is_ kind of *important*. → This is kind of important. 
+
+To strikethrough a text, surround it with '~~'s. ~~This text is striked through~~
+
+To highlight a text, surround it with '=='s. ==This text is highlighted==
+
+Bullet lists: use ‘- ‘ (notice the space after the dash). - one - two 
+
+Use numbers (1.) instead for numbered lists. 
+
+To create a task list, start each list item with a hyphen and space followed by `[ ]`.
+- [x] This is a completed task.
+- [ ] This is an incomplete task.
+
+To create a box to use markdown syntax in, surround it with 3 ` s at each end.
+```
+This is a markdown box
+```
+
+To force text to display in plain text add a backslash \ in front of it. 
+\*\*This line will not be bold\*\*
+
+To add foot notes add a [] with a ^ then number or label within the brackets at the end of the sentence you want to have a footnote for.
+
+This is a simple footnote.[^1]
+[^1]: This is the referenced text.
+You can also use inline footnotes. ^[This is an inline footnote.]
+### Adding Links
+
+To create a link to a webpage: [text for the link](https://example.com/) 
+To link to a page in your vault (create a local link): [[Resources/some page]] 
+To link to a header in your vault (another local link): [[The Notes#Section 1]] 
+To change the text for a local link: use the | character: [[Resources/some page|this will show up instead]]
+To add an external images: ![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+To embed an audio file: ![[Excerpt from Mother of All Demos (1968).ogg]]
